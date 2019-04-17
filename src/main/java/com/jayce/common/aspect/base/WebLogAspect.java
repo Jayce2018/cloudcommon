@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -19,6 +20,7 @@ import java.util.Arrays;
 @Component
 @ApiModel(value = "WebLogAspect", description = "web控制层切面输出日志")
 @Slf4j
+@Order(1)
 public class WebLogAspect {
 
     @ApiOperation(value = "webLog", notes = "定义jc-cloud的控制层切点")
